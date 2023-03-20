@@ -26,8 +26,8 @@ function speak () {
     speak_data = "Taking your selfie in 5 seconds";
     var utterThis = new SpeechSynthesisUtterance(speak_data);
     synth.speak(utterThis); 
-    setTimeout();
     Webcam.attach(camera);
+    setTimeout();
 
 }
 
@@ -47,13 +47,13 @@ Webcam.set({
  camera = document.getElementById("camera");
 
  function take_snapshot() {
-    webcam.snap(function (data_uri) {
+    Webcam.snap(function (data_uri) {
         document.getElementById("result").innerHTML = '<img id="selfie_image" src="'+data_uri+'">';
          
     });
  }
 
-  setTimeout(function (){
+  setTimeout(function () {
     take_snapshot();
     save();
  }, 5000);  
